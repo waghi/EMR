@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="dist/js/jquery-1.9.1.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+<script src="dist/font/"></script>
+<link href="https://fonts.googleapis.com/css?family=ABeeZee"
+	rel="stylesheet">
+<title>Registration</title>
+</head>
+<body>
+	<nav class="navbar navbarstyle navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html" id="CWD"
+					style="color: white; background-color: #3399ff;">EMR</a>
+			</div>
+
+			<ul class="nav navbar-nav">
+				<li class="ex1 onleft" id="registrationDoctorBar"><a href="#"
+					style="color: white;"><span class="glyphicon glyphicon-user"></span>
+						Doctor</a></li>
+				<li class="ex1" id="registrationHospitalBar"><a href="#"
+					style="color: white;"><span
+						class="glyphicon glyphicon-plus-sign"></span> Hospital</a></li>
+				<li class="ex1" id="registrationPatientBar"><a href="#"
+					style="color: white;"><span class="glyphicon glyphicon-heart"></span>
+						Patient</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="ex1 on"><a href="registration.html"
+					id="registration" style="color: white;"><span
+						class="glyphicon glyphicon-pencil"></span> Registration</a></li>
+				<li class="ex1"><a href="addVisit.html" id="addVisit" style="color: white;"><span
+						class="glyphicon glyphicon-list-alt"></span> Add Visit </a></li>
+				<li class="ex1"><a href="search.html" id="search"
+					style="color: white;"><span class="glyphicon glyphicon-search"></span>
+						Search</a></li>
+
+			</ul>
+		</div>
+	</nav>
+
+	<!-----------------------DOCTOR FORM---------------------------- -->
+
+	<div class="container" id="registrationDoctorShow">
+		<div class="row">
+			<form class="form-horizontal"  id="registrationDoctorForm">
+				<div class="form-group">
+					<label class="control-label col-md-4" for="drn">Registration:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="drn" name="drn"
+							placeholder="Enter Dr. Registraion Number" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="dname">Name:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="dname" name="dname"
+							placeholder="Enter Dr. Name" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="ds">Specialization:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="ds" name="ds"
+							placeholder="Enter Dr. Specialization" required>
+					</div>
+				</div>
+				<div class="form-inline form-group" style="margin-top: 5em;">
+					<div class="row">
+						<div class="col-md-6">
+							<label class="control-label col-md-4" for="day">Day:</label>
+							<div class="col-sm-8">
+								<select class="form-control" id="day" name="day">
+									<option>Mon</option>
+									<option>Tue</option>
+									<option>Wed</option>
+									<option>Thu</option>
+									<option>Fri</option>
+									<option>Sat</option>
+									<option>Sun</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label class="control-label col-md-4" for="time">Time:</label>
+							<div class="col-sm-8">
+								<select class="form-control" id="time" name="time">
+									<option>10:00AM-12:00AM</option>
+									<option>2:00PM-4:00PM</option>
+									<option>5:00PM-8:00PM</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-6">
+						<input type="submit" class="btn btn-primary pull-right"
+						
+							value="submit">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- -------------------------DOCTOR REG FORM END---------------- -->
+
+	<!-- -------------------------HOSPITAL REG FORM START------------ -->
+
+	<div class="container hidden" id="registrationHospitalShow">
+		<div class="row">
+			<form class="form-horizontal" id="registrationHospitalForm">
+				<div class="form-group">
+					<label class="control-label col-md-4" for="hrn">Registration:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="hrn" name="hrn"
+							placeholder="Enter Hospital Registraion Number" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="hname">Name:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="hname" name="hname"
+							placeholder="Hospital Name" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="hadd">Address:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="hadd" name="hadd"
+							placeholder="Hospital Address" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-6">
+						<input type="submit" class="btn btn-warning pull-right"
+							value="submit">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- -------------------------HOSPITAL REG FORM END-------------- -->
+
+	<!-- -------------------------PATIENT REG FORM START------------- -->
+
+	<div class="container hidden" id="registrationPatientShow">
+		<div class="row">
+			<form class="form-horizontal" id="registrationPatientForm">
+				<div class="form-group">
+					<label class="control-label col-md-4" for="panme">Name:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="pname" name="pname"
+							placeholder="Enter Patient's Name" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="dob">DOB:</label>
+					<div class="col-sm-8">
+						<input type="date" class="form-control" id="dob" name="dob"
+							placeholder="DateOfBirth" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="padd">Address:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="padd" name="padd"
+							placeholder="Patient's Address" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="pn">Phone No.:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="pn" name="pn"
+							placeholder="Patient's Phone No." required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="pn">Gender:</label>
+					<div class="col-sm-8">
+						<label class="radio-inline"><input type="radio"
+							name="gen" value="M" checked="checked">Male</label> <label
+							class="radio-inline"><input  type="radio" name="gen"
+							value="F">Female</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="gidname">Govt
+						ID:</label>
+					<div class="col-sm-4">
+						<select class="form-control" id="gidname" name="gidname">
+							<option>Driving License</option>
+							<option>Passport</option>
+							<option>PAN Card</option>
+							<option>Voter ID</option>
+							<option>AADHAR</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="gidnum" name="gidnum"
+							placeholder="Govt Id No." required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="gdname">Guardian
+						Name:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="gdname" name="gdname"
+							placeholder="Guardian Name">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-6">
+						<input type="submit" class="btn btn-warning pull-right"
+							value="submit">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- -------------------------PATIENT REG FORM END--------------- -->
+</body>
+</html>
+<script>
+	$('#registrationDoctorBar').click(function() {
+		$('#registrationHospitalShow').addClass('hidden');
+		$('#registrationDoctorShow').removeClass('hidden');
+		$('#registrationPatientShow').addClass('hidden');
+		$('#registrationDoctorBar').addClass('onleft');
+		$('#registrationHospitalBar').removeClass('onleft');
+		$('#registrationPatientBar').removeClass('onleft');
+	});
+	$('#registrationHospitalBar').click(function() {
+		$('#registrationHospitalShow').removeClass('hidden');
+		$('#registrationDoctorShow').addClass('hidden');
+		$('#registrationPatientShow').addClass('hidden');
+		$('#registrationDoctorBar').removeClass('onleft');
+		$('#registrationHospitalBar').addClass('onleft');
+		$('#registrationPatientBar').removeClass('onleft');
+	});
+	$('#registrationPatientBar').click(function() {
+		$('#registrationHospitalShow').addClass('hidden');
+		$('#registrationDoctorShow').addClass('hidden');
+		$('#registrationPatientShow').removeClass('hidden');
+		$('#registrationDoctorBar').removeClass('onleft');
+		$('#registrationHospitalBar').removeClass('onleft');
+		$('#registrationPatientBar').addClass('onleft');
+	});
+
+	var doctorform = $('#registrationDoctorForm');
+	doctorform.submit(function() {
+		console.log(doctorform.serialize());
+		$.ajax({
+			type : 'post',
+			url:'addDoctor',
+			data:doctorform.serialize(),
+			success:function(data){
+				if(data=="true"){
+					document.getElementById('registrationDoctorForm').reset();
+					alert('Registration Successfull');
+				}
+				else{
+					alert('Try again');
+				}
+				console.log(data);
+			}
+		});
+		return false;
+	});
+	var patientform = $('#registrationPatientForm');
+	patientform.submit(function() {
+		console.log(patientform.serialize());
+		$.ajax({
+			type : 'post',
+			url:'addPatient',
+			data:patientform.serialize(),
+			success:function(data){
+				if(data=="true"){
+					document.getElementById('registrationPatientForm').reset();
+					alert('Registration Successfull');
+				}
+				else{
+					alert('Try again');
+				}
+				console.log(data);
+			}
+		});
+		return false;
+	});
+	var hospitalform = $('#registrationHospitalForm');
+	hospitalform.submit(function() {
+		console.log(hospitalform.serialize());
+		$.ajax({
+			type : 'post',
+			url:'addHospital',
+			data:hospitalform.serialize(),
+			success:function(data){
+				if(data=="true"){
+					document.getElementById('registrationHospitalForm').reset();
+					alert('Registration Successfull');
+				}
+				else{
+					alert('Try again');
+				}
+				console.log(data);
+			}
+		});
+		return false;
+	});
+	
+</script>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="dist/js/jquery-1.9.1.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+<script src="dist/font/"></script>
+<link href="https://fonts.googleapis.com/css?family=ABeeZee"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather+Sans"
+	rel="stylesheet">
+<title>addVisit</title>
+</head>
+<body>
+	<nav class="navbar navbarstyle navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html" id="CWD"
+					style="color: white; background-color: #3399ff;">EMR</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="ex1"><a href="registration.html" id="registration"
+					style="color: white;"><span class="glyphicon glyphicon-pencil"></span>
+						Registration</a></li>
+				<li class="ex1 on"><a href="addVisit.html" id="addVisit"
+					style="color: white;"><span
+						class="glyphicon glyphicon-list-alt"></span> Add Visit </a></li>
+				<li class="ex1"><a href="search.html" id="search" style="color: white;"><span
+						class="glyphicon glyphicon-search"></span> Search</a></li>
+
+			</ul>
+		</div>
+	</nav>
+	<!-----------------------FORM---------------------------- -->
+
+	<div class="container" >
+		<div class="row">
+			<form class="form-horizontal" id="form1">
+				<div class="form-group">
+					<label class="control-label col-md-4" for="prn">Registration:</label>
+					<div class="col-sm-8">
+						<input type="number" class="form-control" id="prn" name="prn"
+							placeholder="Enter Patient's Registration Number" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="date">Date:</label>
+					<div class="col-sm-8">
+						<input type="date" class="form-control" id="date" name="date"
+							 required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="drn">Doctor:</label>
+					<div class="col-sm-8">
+						<input type="number" class="form-control" id="drn" name="drn"
+							placeholder="Enter Dr. Registration Number" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-4" for="hrn">Hospital:</label>
+					<div class="col-sm-8">
+						<input type="number" class="form-control" id="hrn" name="hrn"
+							placeholder="Enter Hospital Registration Number" required>
+					</div>
+				</div>
+				
+				<div class="checkbox">
+					<label><input type="checkbox" value="Diagnostic" id="d"
+						name="d">Diagnostic</label>
+				</div>
+				<div id="diagnostic" style="display: none;">
+					<div class="form-group">
+						<label class="control-label col-md-4" for="testn">Test Name:</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control dtype" name="testn"
+								placeholder="Enter Test Name" required disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4" for="hrn">Test Result:</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control dtype" name="testr"
+								placeholder="Enter Test Result" required disabled>
+						</div>
+					</div>
+				</div>
+				
+				<div class="checkbox">
+					<label><input type="checkbox" value="Consultacy" id="c"
+						name="c">Consultancy</label>
+				</div>
+				<div id="consultancy" style="display: none;">
+					<div class="form-group">
+						<label class="control-label col-md-4" for="symp">Symptoms:</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control ctype"  name="symp"
+								placeholder="Enter Symptoms" required disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4" for="presd">Prescription Date:</label>
+						<div class="col-sm-8">
+							<input type="date" class="form-control ctype" name="presd"
+								placeholder="Enter Test Result" required disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4" for="mediname">Medicine:</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control ctype"  name="mediname"
+								placeholder="Enter Medicine" required disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-4" for="dose">Dosage:</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control ctype"  name="dose"
+								placeholder="Enter Dosage" required disabled>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-6">
+						<input type="submit" class="btn btn-warning pull-right"
+							value="submit">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- -------------------------DOCTOR REG FORM END---------------- -->
+</body>
+</html>
+<script>
+$("#d").change(function() {
+    if(this.checked) {
+       	$('#diagnostic').css('display','block');
+       	$( ".dtype" ).each(function( index ) {
+       	  this.disabled=false;
+       	});
+    }
+    else {
+       	$('#diagnostic').css('display','none');
+       	$( ".dtype" ).each(function( index ) {
+       	  this.disabled=true;
+       	});
+    }
+    
+});
+
+$("#c").change(function() {
+    if(this.checked) {
+       	$('#consultancy').css('display','block');
+       	$( ".ctype" ).each(function( index ) {
+       	  this.disabled=false
+       	});
+    }
+    else {
+       	$('#consultancy').css('display','none');
+       	$( ".ctype" ).each(function( index ) {
+         	  this.disabled=true
+         	});
+    }
+});
+
+var form=$('#form1');
+form.submit(function(){
+	var at = $("input[type='checkbox']:checked").length;
+	console.log(form.serialize());
+	if(at==0){
+		alert("Select atleast one from Diagnostic or Consultancy");
+		return false;
+	}
+	$.ajax({
+		type: 'post',
+		url: 'addVisit',
+		data:form.serialize(),
+		success:function(data){
+			console.log(data);
+			if(data=="1"){
+				alert("INVALID PRN");
+			}
+			if(data=="2"){
+				alert("INVALID DRN");
+			}
+			if(data=="3"){
+				alert("INVALID HRN");
+			}
+			if(data=="0"){
+				alert("VISIT ADDED SUCCESSFULLY");
+				document.getElementById('form1').reset();
+			}
+		}
+		
+	});
+	return false;
+});
+
+</script>

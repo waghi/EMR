@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="dist/js/jquery-1.9.1.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+<script src="dist/font/"></script>
+<link href="https://fonts.googleapis.com/css?family=ABeeZee"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather+Sans"
+	rel="stylesheet">
+<title>DM</title>
+</head>
+<body>
+	<nav class="navbar navbarstyle navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html" id="CWD"
+					style="color: white; background-color: #3399ff;">EMR</a>
+			</div>
+			<div class="navbar-form navbar-left">
+				<div class="input-group">
+					<input type="Search" id="prn" name="prn"
+						placeholder="Enter Registration no." class="form-control"
+						style="min-width: 15em;" value="" />
+					<div class="input-group-btn">
+						<span class="glyphicon glyphicon-search"></span>
+						<button class="btn btn-primary" id="prnsubmitPatient"
+							style="border-radius: 0px;">Patient</button>
+						<button class="btn btn-success" id="prnsubmitDoctor"
+							style="border-radius: 0px;">Doctor</button>
+					</div>
+				</div>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="ex1 "><a href="#" style="color: white;"
+					data-toggle="modal" data-target="#forgotprn"><span
+						class="glyphicon glyphicon-exclamation-sign"></span> Forgot PRN</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="ex1"><a href="registration.html" id="registration"
+					style="color: white;"><span class="glyphicon glyphicon-pencil"></span>
+						Registration</a></li>
+				<li class="ex1"><a href="addVisit.html" id="addVisit" style="color: white;"><span
+						class="glyphicon glyphicon-list-alt"></span> Add Visit </a></li>
+				<li class="ex1 on"><a href="#" id="search"
+					style="color: white;"><span class="glyphicon glyphicon-search"></span>
+						Search</a></li>
+
+			</ul>
+		</div>
+	</nav>
+	<div id="showPatientSearchResult" class="hidden">
+		<h1 align="center"
+			style="font-family: 'Merriweather Sans', sans-serif; color: #001e28;">Patient
+			Details</h1>
+		<div style="margin-top: 5em" id="patientsTable"></div>
+	</div>
+	<div id="showDoctorSearchResult" class="hidden">
+		<h1 align="center"
+			style="font-family: 'Merriweather Sans', sans-serif; color: #001e28;">Patients
+			Under a Doctor</h1>
+		<div style="margin-top: 5em" id="doctorsTable"></div>
+	</div>
+		<div id="showPRNSearchResult" class="hidden">
+		<h1 align="center"
+			style="font-family: 'Merriweather Sans', sans-serif; color: #001e28;">Patient's List</h1>
+		<div style="margin-top: 5em" id="PRNTable"></div>
+	</div>
+	<!-- -----------------------------FORGOT FORM PRN START----------------------------------- -->
+
+	<div id="forgotprn" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">ENTER PATIENT'S DETAIL</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<form class="form-horizontal" id="registrationPatientSearch">
+							<div class="form-group">
+								<label class="control-label col-md-4" for="pname">Name:</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="pname" name="pname"
+										placeholder="Enter Patient's Name">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-4" for="dob">DOB:</label>
+								<div class="col-sm-8">
+									<input type="date" class="form-control" id="dob" name="dob"
+										placeholder="DateOfBirth">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-4" for="pn">Phone
+									No.:</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="pn" name="pn"
+										placeholder="Patient's Phone No.">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-4" for="gidname">Govt
+									ID:</label>
+								<div class="col-sm-4">
+									<select class="form-control" id="gidname" name="gidname">
+										<option>Driving License</option>
+										<option>Passport</option>
+										<option>PAN Card</option>
+										<option>Voter ID</option>
+										<option>AADHAR</option>
+									</select>
+								</div>
+								<div class="col-md-4">
+									<input type="text" class="form-control" id="gidnum"
+										name="gidnum" placeholder="Govt Id No.">
+								</div>
+							</div>
+							<div class="form-group" style="display: none;">
+								<div class="col-md-offset-2 col-md-6">
+									<input type="submit" class="btn btn-warning pull-right"
+										id="submitButton" value="submit">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-warning"
+						onclick="document.getElementById('submitButton').click();">Find</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- -----------------------------FORGOT FORM PRN END----------------------------------- -->
+
+
+</body>
+</html>
+<script>
+	$('#prnsubmitPatient').click(function() {
+		console.log($('#prn').val());
+		$.ajax({
+			type : 'post',
+			url : 'ShowDetails',
+			data : $('#prn').val(),
+			success : function(data) {
+				console.log(data);
+				if(data=="null"){
+					data="UNABLE TO FIND ENTRY<br>CHECK REGISTRATION NUMBER";
+				}
+				$('#prn').val('');
+				document.getElementById('patientsTable').innerHTML=data;
+				$('#showPatientSearchResult').removeClass('hidden');
+				$('#showDoctorSearchResult').addClass('hidden');
+				$('#showPRNSearchResult').addClass('hidden');
+				
+			}
+		});
+		return false;
+	});
+
+	$('#prnsubmitDoctor').click(function() {
+		$.ajax({
+			type : 'post',
+			url : 'ListPatients',
+			data : $('#prn').val(),
+			success : function(data) {
+				console.log(data);
+				if(data=="null"){
+					data="UNABLE TO FIND ENTRY<br>CHECK REGISTRATION NUMBER";
+				}
+				$('#prn').val('');
+				document.getElementById('doctorsTable').innerHTML=data;
+				$('#showPatientSearchResult').addClass('hidden');
+				$('#showDoctorSearchResult').removeClass('hidden');
+				$('#showPRNSearchResult').addClass('hidden');
+				
+			}
+		
+		});
+		return false;
+	});
+
+	var searchPRNform = $('#registrationPatientSearch');
+	searchPRNform.submit(function() {
+		$.ajax({
+			type : 'post',
+			url : 'searchPRN',
+			data : searchPRNform.serialize(),
+			success : function(data) {
+				console.log("XXXXXXXXXXXXXXXXXXX");
+				console.log(data);
+				document.getElementById('registrationPatientSearch').reset();
+				if(data=="null"){
+					data="UNABLE TO FIND ENTRY<br>CHECK DETAILS";
+				}
+				document.getElementById('PRNTable').innerHTML=data;
+				$('#showPatientSearchResult').addClass('hidden');
+				$('#showDoctorSearchResult').addClass('hidden');
+				$('#showPRNSearchResult').removeClass('hidden');
+			}
+		});
+		return false;
+	});
+</script>

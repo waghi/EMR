@@ -1,0 +1,85 @@
+.fittodiv {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+
+form {
+	margin: 0 auto;
+	width: 30em;
+	margin-top: 1em;
+}
+
+div.row {
+	margin: 0 auto;
+}
+
+li.ex1:hover, li.ex1:active {
+	background-color: #145ea8;
+}
+
+.navbarstyle {
+	background-color: white;
+	border: 0px;
+	border-radius: 0px;
+	color: black;
+}
+
+.textColor {
+	color: white;
+}
+
+.hidden {
+	display: none;
+}
+
+.on {
+	background-color: #75bb95;
+}
+
+.onleft {
+	background-color: #c04040;
+}
+
+
+
+table {
+	border-collapse: collapse;
+}
+
+.visitType {
+	background-color: #0099CC;
+	color: white;
+}
+
+.visit {
+	height: 40px;
+	background-color: #214179;
+	color: white;
+}
+
+.visited {
+	height: 40px;
+	background-color: #005b7a;
+	color: white;
+}
+
+
+
+.hm {
+	height: 40px;
+	background-color: #FFF;
+	color: white;
+}
+
+.ht {
+	height: 40px;
+	text-align:center;
+}
+
+.hs {
+	height: 30px;
+}
+th,td{
+	padding:5px;
+}
